@@ -499,4 +499,4 @@ let initBackupsRoot: Common.root -> unit -> unit Lwt.t =
 
 let initBackups () =
   Lwt_unix.run (
-    Globals.allRootsIter (fun r -> initBackupsRoot r ()))
+    Globals.allRemotesIter (fun r -> initBackupsRoot r ()))

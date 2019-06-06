@@ -33,6 +33,10 @@ val localRoot : unit -> Common.root
 (* Run a command on all roots                                                *)
 val allRootsIter :
   (Common.root -> unit Lwt.t) -> unit Lwt.t
+  
+(* Run a command on all remotes                                              *)
+val allRemotesIter :
+  (Common.root -> unit Lwt.t) -> unit Lwt.t
 
 (* Run a command on all roots                                                *)
 val allRootsIter2 :
