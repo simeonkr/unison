@@ -110,6 +110,10 @@ let nice r =
 let allRootsIter f =
   Lwt_util.iter
     (fun r -> nice r >>= (fun () -> f r)) (rootsInCanonicalOrder ())
+    
+let allRemotesIter f =
+  Lwt_util.iter
+    (fun r -> nice r >>= (fun () -> f r)) (List.tl (rootsInCanonicalOrder ()))
 
 let allRootsIter2 f l =
   let l = Safelist.combine (rootsList ()) l in
